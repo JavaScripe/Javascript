@@ -1,0 +1,47 @@
+<!doctype html>
+  <style>-->
+  body {
+  background-color: rgb(52, 166, 251); /*背景颜色调成和原来一样*/
+}
+#snow {
+  background: none;
+
+
+  background-image: url('s1.png'), url('s2.png'), url('s3.png');
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+ 
+  animation: snow 10s linear infinite;  /*雪花移动速度*/
+}
+@keyframes snow {  /*添加动态效果，三张图片从哪里移动到哪里*/
+  0% {
+    background-position: 0px 0px, 0px 0px, 0px 0px;
+  }
+  
+  100% {
+    background-position: 500px 1000px, 200px 400px, -100px 300px;
+  }
+}
+
+  </style>
+ </head>
+ <body>
+  <div id="snow"></div>
+ </body>
+</html>
+
+<!doctype html>
+<script src="code/chapter/15_game.js"></script>
+<script src="code/game_levels.js"></script>
+
+<link rel="stylesheet" href="css/game.css">
+
+<body>
+  <script>
+    runGame(GAME_LEVELS, DOMDisplay)//运行游戏;
+  </script>
+</body>
