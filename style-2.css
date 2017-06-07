@@ -1,0 +1,155 @@
+﻿@charset "UTF-8";
+html {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  font-family: 12px;
+  color: #555;
+  background: #F8FFE5;
+}
+header {
+  color: #F8FFE5;
+  text-align: center;
+}
+header span {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  margin: 0 0.4rem;
+  background: #FFC43D;
+}
+header span:nth-of-type(2) {
+  background: #EF476F;
+}
+header span:nth-of-type(3) {
+  background: #1B9AAA;
+}
+header span:nth-of-type(4) {
+  background: #06D6A0;
+}
+.directions {
+  padding: 2rem;
+  border-top: 1px solid #9a9a95;
+  border-bottom: 1px solid #9a9a95;
+}
+
+.container {
+  margin: 0 auto;
+  padding-bottom: 3.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  width: 100%;
+  max-width: 550px;
+  text-align: center;
+}
+header .container {
+  padding: 0;
+  padding: 2rem 4rem;
+  max-width: 900px;
+}
+
+.scores {
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.score-container {
+  display: flex;
+  margin: 1.8rem;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: #555;
+}
+.score-container.best-score {
+  color: #9a9a95;
+}
+
+.score {
+  margin-left: 1rem;
+  position: relative;
+  font-weight: bold;
+  font-size: 1.5rem;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.game {
+  position: relative;
+  margin: 0 auto;
+  background: #9a9a95;
+  padding: 7px;
+  display: inline-block;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.tile-container {
+  border-radius: 6px;
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+.background {
+  z-index: 1;
+  text-align: center;
+  border: 7px solid #9a9a95;
+  background-color: #F8FFE5;
+}
+
+.tile {
+  opacity: 0;
+  z-index: 2;
+  background: #FFC43D;
+  color: #F8FFE5;
+  font-size: 1.8rem;
+  align-items: center;;
+  transition: 110ms ease-in-out;
+  border-radius: 3px;
+  border: 7px solid #9a9a95;
+  box-sizing: border-box;
+}
+.tile--4 {
+  background: #EF476F;
+  color: #F8FFE5;
+}
+.tile--8 {
+  background: #1B9AAA;
+  color: #F8FFE5;
+}
+.tile--16 {
+  background: #06D6A0;
+  color: #F8FFE5;
+}
+.tile--32 {
+  background: #f37694;
+  color: #F8FFE5;
+}
+.tile--64 {
+  background: #22c2d6;
+  color: #F8FFE5;
+}
+.tile--128 {
+  background: #17f8be;
+  color: #F8FFE5;
+}
+.tile--256 {
+  background: #ffd470;
+  color: #F8FFE5;
+}
+.tile--512 {
+  background: #eb184a;
+  color: #F8FFE5;
+}
+.tile--1024 {
+  background: #14727e;
+  color: #F8FFE5;
+}
+.tile--2048 {
+  background: #05a47b;
+  color: #F8FFE5;
+}
