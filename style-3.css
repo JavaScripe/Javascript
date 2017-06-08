@@ -3,6 +3,14 @@ html {
   position: relative;
   width: 100%;
   height: 100%;
+    display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Arvo", Helvetica, sans-serif;
   font-family: 12px;
   color: #555;
   background: #F8FFE5;
@@ -52,6 +60,8 @@ header .container {
 }
 
 .scores {
+    display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -59,7 +69,15 @@ header .container {
 }
 
 .score-container {
+      display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 1.8rem;
   font-size: 1.2rem;
   line-height: 1;
@@ -94,6 +112,15 @@ header .container {
   width: 400px;
   height: 400px;
 }
+.tile, .background {
+  display: block;
+  color: #F8FFE5;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  text-align: center;
+}
 .background {
   z-index: 1;
   text-align: center;
@@ -102,12 +129,22 @@ header .container {
 }
 
 .tile {
-  opacity: 0;
+ opacity: 0;
   z-index: 2;
   background: #FFC43D;
   color: #F8FFE5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 1.8rem;
-  align-items: center;;
+  align-items: center;
+  -webkit-transition: 110ms ease-in-out;
   transition: 110ms ease-in-out;
   border-radius: 3px;
   border: 7px solid #9a9a95;
