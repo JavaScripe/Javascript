@@ -1,32 +1,17 @@
 ﻿@charset "UTF-8";
-html {
-  position: relative;
-  width: 100%;
-  height: 100%;
-    display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-family: "Arvo", Helvetica, sans-serif;
-  font-family: 12px;
-  color: #555;
-  background: #F8FFE5;
-}
-header {
+header {  /*上面字体颜色*/
   color: #F8FFE5;
   text-align: center;
 }
 header span {
-  display: inline-block;
-  box-sizing: border-box;
+  display: inline-block;  /*浮动,对象呈递为内联对象，但是对象的内容作为块对象呈递*/
   width: 4rem;
   height: 4rem;
   line-height: 4rem;
-  margin: 0 0.4rem;
-  background: #FFC43D;
+  margin: 0 0.5rem;
+}
+header span:nth-of-type(1){  /*选择器选取第N个元素*/
+background: #FFC43D;
 }
 header span:nth-of-type(2) {
   background: #EF476F;
@@ -37,57 +22,42 @@ header span:nth-of-type(3) {
 header span:nth-of-type(4) {
   background: #06D6A0;
 }
-.directions {
+
+h1 {
+  font-size: 2.2rem;
+}
+
+.directions {   /*盒子*/
   padding: 2rem;
   border-top: 1px solid #9a9a95;
   border-bottom: 1px solid #9a9a95;
 }
 
-.container {
-  margin: 0 auto;
-  padding-bottom: 3.5rem;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  width: 100%;
-  max-width: 550px;
+.container {    /*设置盒子位置*/
+  margin: auto;
   text-align: center;
+  max-width: 500px; /*dircetions 中border的长度*/
 }
 header .container {
-  padding: 0;
   padding: 2rem 4rem;
-  max-width: 900px;
 }
 
 .scores {
-    display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  display: flex;  /*弹性布局*/
+  justify-content: center;  /*水平对齐*/
 }
 
 .score-container {
-      display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin: 1.8rem;
-  font-size: 1.2rem;
-  line-height: 1;
+  margin: 2rem;
+  font-size: 1.4rem;
   color: #555;
 }
 .score-container.best-score {
-  color: #9a9a95;
+  color: #555;
 }
 
-.score {
+.score {   /*得分*/
   margin-left: 1rem;
   position: relative;
   font-weight: bold;
@@ -96,16 +66,14 @@ header .container {
   text-align: right;
 }
 
-.game {
-  position: relative;
-  margin: 0 auto;
+.box { /*外盒子*/
+  position: relative; /*绝对定位*/
+  margin:  auto;
   background: #9a9a95;
   padding: 7px;
   display: inline-block;
-  border-radius: 3px;
-  box-sizing: border-box;
+  border-radius: 8px;
 }
-
 .tile-container {
   border-radius: 6px;
   position: relative;
