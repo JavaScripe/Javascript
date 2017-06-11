@@ -2,49 +2,47 @@ body {
     font-family: "微软雅黑";
     background: #f4f4f4;
 }
-
 .content-title {
     margin: 10px 0 25px 0;
-    font-size: 2em;
+    font-size: 32px;
     color: #747474;
     font-weight: normal;
 }
 .content-form {
-    width: 100%;
+    width: 620px;
     padding: 36px 0 20px;
     border: 1px solid  #dedede;
     text-align: center;
     background: #fff;
 }
 .content-form form div {
-    margin-bottom: 19px;
+    margin-bottom: 20px;
 }
 .content-form form .user,
 .content-form form .password {
-    width: 77%;
+    width: 495px;
     height: 20px;
     padding: 10px;
-    font-size: 1em;
+    font-size: 16px;
     border: 1px solid  #cccbcb;
     border-radius: 7px;
     letter-spacing: 1px;
 }
 .content-form form input:focus {
-    outline: none;
-    -webkit-box-shadow: 0 0 5px #0dbfdd;
-    box-shadow: 0 0 5px #0dbfdd;
+    outline: none;  /*去掉轮廓*/
+    box-shadow: 0 0 5px #0dbfdd;  /*阴影向外扩散5px*/
 }
 .content-form-signup {
-    width: 84%;
+    width: 515px;
     margin: 0 auto;
     padding: 10px;
     border: 1px solid  #cccbcb;
     border-radius: 7px;
-    font-size: 1em;
+    font-size: 16px;
     font-weight: bold;
     color: #fff;
     background: #0dbfdd;
-    cursor: pointer;
+    cursor: pointer;  /*鼠标改变*/
 }
 .content-form-signup:hover {
     background: #0cb3d0;
@@ -53,24 +51,23 @@ body {
     outline: none;
     border: 1px solid  #0cb3d0;
 }
-.content-login-description {
-    margin-top: 25px;
-    line-height: 1.63636364;
+.content-login-description {  /*下方提示*/
+    margin-top: 20px;
+    margin-bottom: 10px;
     color: #747474;
-    font-size: .91666667rem;
+    font-size: 15px;
 }
-.content-login-link {
+.content-login-link {     /*切换页面链接*/
     font-size: 16px;
     color: #0dbfdd;
-    text-decoration: none;
 }
 
 /*输入框无内容便提示*/
 #remind_1,
 #remind_2 {
-    width: 76%;
-    margin: 0 auto 2px;
-    text-align: left;
-    font-size: .2em;
+    width: 495px;
+    margin: 2px auto 2px;
+    text-align: left;   /*水平对齐*/
+    font-size: 3.2px;
     color: #f00;
 }
