@@ -1,14 +1,13 @@
 //先创建一个空数组，用来存储25个格子的数据
 var board=new Array();
-//创建score变量用来内存储分数
+//创建score变量用来内存储分数，创建bestScore储存最高分
 var score=0;
 var bestScore=0;
 var endDiv = document.getElementById('end');
 var bestScoreDiv = document.getElementById('bestScore');
 var scoreDiv = document.getElementById('score');
 var addDiv = document.getElementById('add');
-//在最初完成后，发现了bug，就是2 2 4，直接合并为了8，
-//为了消除这个bug，特意创建此变量，用来使一个格子发生一次叠加后，在刷新面板之前，禁止再次叠加。
+//创建hasConflicted变量，控制职能发生一次叠加
 var hasConflicted=new Array();
 //页面加载完成后，开始一个新游戏
 $(document).ready(function(){
@@ -18,19 +17,18 @@ $(document).ready(function(){
 function newGame()
 {
     //初始化棋盘格
-    // document.getElementById('grid-container').innerHTML = '';
-    endDiv.classList.remove('active');
-    score = 0;
-    scoreDiv.innerHTML = score;
-    init();
+    endDiv.classList.remove('active');//将上次失败后的界面移除
+    score = 0;//将分数重置为0
+    init();//调用初始化棋盘格函数
     //随机生成一个数字
     randomOneNumber();
-    //随机生成一个数字，就如同我们看到的新游戏时的两个数字
+    //再次随机生成一个数字
     randomOneNumber();
     //刷新分数
-    updateScore(score);
+    updateScore(score);//刷新分数，具体函数在support2048.js中
     initBestScore();
 }
+//调用最高分
 function initBestScore() {
     bestScore = localStorage.getItem('bestScore') || 0;
     bestScoreDiv.innerHTML = bestScore;
@@ -38,18 +36,18 @@ function initBestScore() {
 //初始化棋盘格的过程
 function init()
 {
-    //先建立16个棋盘格子
+    //先建立25个棋盘格子
     for(var i=0;i<5;i++)
     {
         for(var j=0;j<5;j++)
         {
             var gridCell=$("#grid-cell-"+i+"-"+j);
-            //每个格子的位置用getPosTop(),getPosLeft()来计算，具体步骤在support.js里
+            //每个格子的位置用getPosTop(),getPosLeft()来计算，具体步骤在support2048.js里
             gridCell.css("top",getPosTop(i,j));
             gridCell.css("left",getPosLeft(i,j));
         }
     }
-    //再将用于存储数据的board初始化为4*4的数组
+    //再将用于存储数据的board初始化为5*5的数组
     for(var i=0;i<5;i++)
     {
         board[i]=new Array();
@@ -57,7 +55,7 @@ function init()
         for(var j=0;j<5;j++)
         {
             board[i][j]=0;
-            //此处依然为每个数字没有发生叠加
+            //此处每个数字没有发生叠加
             hasConflicted[i][j]=false;
         }
     }
@@ -103,7 +101,7 @@ function updateBoardView()
                 theNumberCell.text(board[i][j]);
 
             }
-            //此处依然为每个数字没有发生叠加
+            //此处每个数字没有发生叠加
             hasConflicted[i][j]=false;
         }
     }
@@ -288,6 +286,7 @@ function moveUp()
             }
         }
     }
+    //用来调用添加数字的小动画和刷新最高分
     if (totalAdd > 0) {
         scoreDiv.innerHTML = score;
         addDiv.innerHTML = '+' + totalAdd;
@@ -416,7 +415,7 @@ function isGameOver()
     //如果已经没有空间可产生新数字并且现有的数字没有可移动的了
     if (noSpace(board) && noMove())
     {
-        //则弹出Game Over!
+        //则弹出Game Over场景
         setTimeout(function () {
             endDiv.classList.add('active');
         }, 800);

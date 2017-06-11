@@ -1,3 +1,4 @@
+//用来数字定位的函数
 function getPosTop(i,j)
 {
     return 20+i*120;
@@ -6,6 +7,7 @@ function getPosLeft(i,j)
 {
     return 20+j*120;
 }
+//设置数字颜色的函数
 function getBackGroundColor(number)
 {
     switch(number)
@@ -32,6 +34,7 @@ function getNumberColor( number ){
 
     return "white";
 }
+//判断有没有空间移动
 function noSpace(board)
 {
     for(var i=0;i<5;i++)
@@ -46,7 +49,7 @@ function noSpace(board)
     }
     return true;
 }
-
+//判断能否向左移
 function canMoveLeft(board)
 {
     for(var i=0;i<5;i++)
@@ -126,6 +129,7 @@ function noRowBlock(row,col1,col2,board)
     }
     return true;
 }
+//判断有无障碍物
 function noColBlock(col,row1,row2,board)
 {
     for(var i=row1+1;i<row2;i++)

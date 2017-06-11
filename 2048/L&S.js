@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/6/11.
  */
-// 全局变量a和b，分别获取用户框和密码框的value值
+// 定义全局变量a和b，分别获取用户框和密码框
 var a= document.getElementsByTagName('input')[0];
 var b =document.getElementsByTagName('input')[1];
 //用户框失去焦点后验证value值

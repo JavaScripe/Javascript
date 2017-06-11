@@ -1,3 +1,4 @@
+//数字产生时的动画
 function showNumberAnimation( i , j , randNumber ){
 
     var numberCell = $('#number-cell-' + i + "-" + j );
@@ -13,6 +14,7 @@ function showNumberAnimation( i , j , randNumber ){
         left:getPosLeft( i , j )
     },50);
 }
+//移动数字时的动画
 function showMoveAnimation( fromx , fromy , tox, toy ){
 
     var numberCell = $('#number-cell-' + fromx + '-' + fromy );
