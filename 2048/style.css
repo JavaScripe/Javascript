@@ -1,0 +1,198 @@
+@charset "UTF-8";
+header {  /*上面字体*/
+  color: #F8FFE5;
+  text-align: center;
+}
+header span {
+  display: inline-block;  /*浮动,对象呈递为内联对象，但是对象的内容作为块对象呈递*/
+  width: 64px;
+  height: 64px;
+  line-height: 64px;
+  margin: 0 8px;
+}
+header span:nth-of-type(1){  /*选择器选取第N个元素*/
+background: #FFC43D;
+}
+header span:nth-of-type(2) {
+  background: #EF476F;
+}
+header span:nth-of-type(3) {
+  background: #1B9AAA;
+}
+header span:nth-of-type(4) {
+  background: #06D6A0;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+.directions {   /*盒子*/
+  padding: 32px;
+  border-top: 1px solid #9a9a95;
+  border-bottom: 1px solid #9a9a95;
+}
+
+.container {    /*设置中间盒子位置*/
+  margin: auto;
+  text-align: center;
+  max-width: 620px; 
+}
+header .container {
+  padding: 32px ;
+}
+
+.scores {
+  display: flex;  /*弹性布局*/
+  justify-content: center;  /*水平对齐*/
+}
+
+.score-container {
+  display: flex;
+  margin: 32px;
+  font-size: 22px;
+  color: #555;
+}
+.score-container.best-score {
+  color: #555;
+}
+
+.score {   /*得分*/
+  margin-left: 16px;
+  position: relative;
+  font-weight: bold;
+  font-size: 24px;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.box {
+  position: relative; /*绝对定位*/
+  padding-top: -300px;
+  width: 620px;
+  height: 620px;
+  background:none;
+  display:flex;
+  border-radius: 8px;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+
+.add {
+  position: absolute;
+  opacity: 0;  /*设置字体透明用于隐藏*/
+  left: 120%;  /*加分数显示位置*/
+  font-size: 16px;
+  color: #1B9AAA;
+}
+.add.active {
+          animation: add 0.8s ease-in-out; /*添加分数显示动画 0.8s显示 先加速后减速*/
+}
+@keyframes add {  /*添加分数 动画 从下往上消失 */
+  0% {
+    opacity: 1;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    top: -100%;
+  }
+}
+@keyframes pop {
+  0% {
+            transform: scale(0.5);
+    opacity: 0;
+  }
+  90% {
+            transform: scale(1.1);  /*伸缩过程， 先变大后变小到理想位置*/
+    opacity: 1;
+  }
+  100% {
+            transform: scale(1);
+    opacity: 1;
+  }
+}
+.end {  /*gameover页面显示*/
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: flex;
+    flex-direction: column; /*垂直显示*/
+    justify-content: center; /*水平居中*/
+    align-items: center; /*定位容器中心*/
+  background: rgba(85, 85, 85, 0.9);
+  color: white;
+  font-size: 32px;
+  transition: opacity 1s ease-in-out;  
+}
+.end.active {
+  opacity: 1;
+  z-index: 1000;
+}
+.monkey {
+  font-size: 48px;
+  margin: 16px 0;
+}
+
+.btn {
+  font-family: inherit; /*继承父元素字体*/
+  font-size: 16px;
+  border: none; /*去掉边框*/
+  background: #1B9AAA;
+  letter-spacing: 1px;  /*字间距为1*/
+  color: white;
+  padding: 14.5px 24px;
+  border-radius: 3px;
+  cursor: pointer;  /*设定鼠标的形状为一只伸出食指的手*/
+}
+.btn:hover {
+  background-color: #14727e;  /*鼠标悬停*/
+}
+.btn:active {       /*鼠标按下*/
+  background-color: #0d4a52;
+}
+.restart {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  margin-top: 48px;
+}
+.grid-container
+{
+  width: 620px;
+  height: 620px;
+  background-color: #9a9a95;
+  border-radius: 8px;
+  position: absolute;
+}
+.grid-cell
+{
+  width: 100px;
+  height: 100px;
+  border-radius: 6px;
+  position: absolute;
+  background-color: white;
+}
+.number-cell{
+  border-radius: 6px;
+  font-weight:bold;
+  font-size:40px;
+  line-height:100px;
+  text-align:center;
+  position:absolute;
+}
+.restart__item + .restart__expression::after { /*元素后面插入*/
+  font-size: 30px;
+  margin-left: 10px;
+  content: "😐";
+}
+.restart__item:hover + .restart__expression::after {
+  content: "😟";
+}
+.restart__item:active + .restart__expression::after {
+  content: "😨";
+}
