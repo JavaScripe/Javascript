@@ -7,7 +7,7 @@ var endDiv = document.getElementById('end');
 var bestScoreDiv = document.getElementById('bestScore');
 var scoreDiv = document.getElementById('score');
 var addDiv = document.getElementById('add');
-//创建hasConflicted变量，控制职能发生一次叠加
+//创建hasConflicted变量，控制只能发生一次叠加
 var hasConflicted=new Array();
 //页面加载完成后，开始一个新游戏
 $(document).ready(function(){
